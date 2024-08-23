@@ -13,6 +13,7 @@ import Request from "../Components/requestSection/Request";
 import Recommand from "../Components/Recomanded/Recommand";
 import Subscribe from "../Components/Subscribe";
 import Footer from "../Components/Footer";
+import Login from "./Login";
 
 
 function Home() {
@@ -31,10 +32,10 @@ function Home() {
           flexDirection:'column'
         }}>
           <Ads/>
-          <DealSection/>
+          {/* <DealSection/>
         <ProductsSection title={'Home and outdoor'} url={homeProduct} typePass={'home'}/>
         <ProductsSection title={'Consumer electronics and gadgets'} url={MobileAccess}  typePass={'mobile'}/>
-        <Request/>
+        <Request/> */}
         <Recommand/>
 
 
@@ -43,7 +44,6 @@ function Home() {
         <Subscribe/>
         <Footer/>
         {/* <HeroSection/> */}
-        
     </div>
   )
 }
