@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const colors = require('../colors');
 
 
 const connectDb = () => {
@@ -8,10 +9,17 @@ const connectDb = () => {
             // useNewUrlParser: true,
             // useUnifiedTopology: true
         });
-        console.log('Database connected successfully');
+        console.log(
+            `${colors.blink + colors.fg.blue + colors.bg.magenta} Database connected ${colors.reset}`
+        );
     }
     catch (err) {
-        console.log('Error connecting to database');
+
+        console.log(
+            `
+            
+            ${colors.blink + colors.fg.red + colors.bg.yellow} Error ${err.message} ${colors.reset}`
+        );
     }
 
 
