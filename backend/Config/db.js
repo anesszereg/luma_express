@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 const colors = require('../colors');
 
@@ -29,3 +30,4 @@ const connectDb = () => {
 
 
 module.exports = connectDb;
+

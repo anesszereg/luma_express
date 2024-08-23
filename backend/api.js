@@ -1,3 +1,4 @@
+
 const express = require('express');
 const connectDb = require('./Config/db');
 const bodyParser = require('body-parser');
@@ -13,9 +14,9 @@ api.use(bodyParser.urlencoded({ extended: true }));
 
 api.use('/api/v1/auth/', require('./Routes/User.routes'));
 
+api.use("/api/Product", require("./Routes/Product.routes"));
 
 
 api.listen(3000, () => {
     console.log(`${colors.reverse + colors.fg.cyan + colors.bg.white } Server started on port 3000${colors.reset}`);
     connectDb();
-});
