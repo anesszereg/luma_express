@@ -20,3 +20,4 @@ api.use("/api/Product", require("./Routes/Product.routes"));
 api.listen(3000, () => {
     console.log(`${colors.reverse + colors.fg.cyan + colors.bg.white } Server started on port 3000${colors.reset}`);
     connectDb();
+});
