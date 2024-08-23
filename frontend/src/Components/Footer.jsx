@@ -163,10 +163,10 @@ function Footer() {
             </Typography>
             <Box display="flex" flexDirection={"column"} gap={"3px"}>
               <Typography fontSize={"16px"} fontWeight={"400"} color="#8B96A5">
-                <Link to='/login'>Login</Link>
+                <Link to="/login">Login</Link>
               </Typography>
               <Typography fontSize={"16px"} fontWeight={"400"} color="#8B96A5">
-                Register
+                <Link to="/sign">Register</Link>
               </Typography>
               <Typography fontSize={"16px"} fontWeight={"400"} color="#8B96A5">
                 Setting
