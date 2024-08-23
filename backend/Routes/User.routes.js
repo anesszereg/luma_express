@@ -16,38 +16,38 @@ router.get('/', UserController.getUsers);
 
 // Get user by id
 
-router.get('/user/:id', UserController.getUserById);
+router.get('/:id', UserController.getUserById);
 
 // Update user
 
-router.put('/user/:id', UserController.updateUser);
+router.put('/:id', UserController.updateUser);
 
 // Delete user
 
-router.delete('/user/:id', UserController.deleteUser);
+router.delete('/:id', UserController.deleteUser);
 
 // like product
 
-router.put('/user/:id/likeProduct', UserController.LikeProduct);
+router.put('/:id/likeProduct', UserController.LikeProduct);
 
 // save product
 
-router.put('/user/:id/saveProduct', UserController.SaveProduct);
+router.put('/:id/saveProduct', UserController.SaveProduct);
 
 //unlike product
 
-router.put('/user/:id/unlikeProduct', UserController.UnlikeProduct);
+router.put('/:id/unlikeProduct', UserController.UnlikeProduct);
 
 //unsave product
 
-router.put('/user/:id/unsaveProduct', UserController.UnsaveProduct);
+router.put('/:id/unsaveProduct', UserController.UnsaveProduct);
 
 // get user saved products
 
-router.get('/user/:id/savedProducts', UserController.getSaveProduct);
+router.get('/:id/savedProducts', UserController.getSaveProduct);
 
 // get user liked products
 
-router.get('/user/:id/likedProducts', UserController.getLikeProduct);
+router.get('/:id/likedProducts', UserController.getLikeProduct);
 
 module.exports = router;

@@ -12,9 +12,11 @@ api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));
 
 
-api.use('/api/v1/auth/', require('./Routes/User.routes'));
+// api.use('/api/v1/auth/', require('./Routes/User.routes'));
 
-api.use("/api/Product", require("./Routes/Product.routes"));
+api.use("/api/v1/User", require("./Routes/User.routes"));
+
+api.use("/api/v1/Product", require("./Routes/Product.routes"));
 
 
 api.listen(3000, () => {

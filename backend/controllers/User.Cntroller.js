@@ -1,5 +1,5 @@
 
-const { get } = require('mongoose');
+
 const User = require('../Models/User.Model');
 
 // Controller logic goes here
@@ -8,8 +8,8 @@ module.exports = {
     // Controller methods go here
     createUser: async (req, res) => {
         try {
-            const { username, image, password, isAdmin } = req.body;
-            const newUser = new User({ username, image, password, isAdmin });
+            const { username, image, password, isAdmin ,email } = req.body;
+            const newUser = new User({ username, image, password, isAdmin ,email });
             await newUser.save();
             res.status(201).json(newUser);
         } catch (error) {
@@ -40,7 +40,7 @@ module.exports = {
 
     updateUser: async (req, res) => {
         try {
-            const { username, image, password, isAdmin } = req.body;
+            const { username, image, password, isAdmin , email } = req.body;
             const user = await User.findById(req.params.id);
             if (!user) {
                 return res.status(404).json({ message: 'User not found' });
@@ -49,6 +49,7 @@ module.exports = {
             user.image = image;
             user.password = password;
             user.isAdmin = isAdmin;
+            user.email = email;
             await user.save();
             res.status(200).json(user);
         } catch (error) {
@@ -73,7 +74,7 @@ module.exports = {
     //user like product 
     LikeProduct: async (req, res) => {
         try {
-            const user = await User.findById(req.params.id);
+            const user = await User.findById(req.params.id).populate('likeProduct');
             if (!user) {
                 return res.status(404).json({ message: 'User not found' });
             }
