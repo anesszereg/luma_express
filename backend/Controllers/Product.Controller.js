@@ -89,4 +89,24 @@ const updateProduct = async (req, res) => {
   }
 };
 
-module.exports = { updateProduct, addProduct, deleteProduct };
+// get all products
+
+const getProducts = async (req, res) => {
+  try {
+    const products = await ProductModel.find();
+    res.status(200).json(products);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+}
+
+
+
+
+
+
+
+module.exports = { 
+  getProducts,
+  updateProduct, addProduct, deleteProduct };

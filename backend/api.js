@@ -18,8 +18,12 @@ api.use("/api/v1/User", require("./Routes/User.routes"));
 
 api.use("/api/v1/Product", require("./Routes/Product.routes"));
 
+api.use("/api/v1/auth", require("./Routes/auth.routes"));
 
 api.listen(3000, () => {
     console.log(`${colors.reverse + colors.fg.cyan + colors.bg.white } Server started on port 3000${colors.reset}`);
     connectDb();
 });
+
+
+
